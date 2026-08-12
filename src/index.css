@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-ink-100 font-body antialiased;
+  }
+  ::selection {
+    @apply bg-cyan-500/30 text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm bg-cyan-500 text-ink-950 font-display text-lg font-semibold uppercase tracking-wide transition-all duration-300 hover:bg-cyan-400 hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] active:scale-95;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm border-2 border-cyan-500/50 text-cyan-100 font-display text-lg font-semibold uppercase tracking-wide transition-all duration-300 hover:border-cyan-500 hover:bg-cyan-500/10 hover:text-cyan-500 active:scale-95;
+  }
+  .section-label {
+    @apply inline-flex items-center gap-2 text-cyan-500 font-display text-sm font-semibold uppercase tracking-[0.2em];
+  }
+  .section-title {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-[1.05] text-white;
+  }
+  .card-surface {
+    @apply bg-ink-900 border border-ink-700 transition-all duration-300 hover:border-cyan-500/40 hover:bg-ink-850;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0F14;
+}
+::-webkit-scrollbar-thumb {
+  background: #243140;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FFFF;
+}
